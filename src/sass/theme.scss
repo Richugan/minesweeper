@@ -1,0 +1,17 @@
+snack-bar-container {
+  &.http-error {
+    background-color: lighten($dangerColor, 30);
+
+    simple-snack-bar {
+      color: darken($dangerColor, 30%);
+    }
+  }
+}
+
+app-login-form {
+  .mat-form-field {
+	width: auto !important; //login-form
+	min-height: 3.5em;
+  }
+
+}

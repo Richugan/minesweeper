@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import "sass/app";
+
+html, body {
+    @include full-size();
+}
+
+body {
+	font-family: $fontFamily;
+	font-size: 14px;
+	cursor: default;
+	margin: 0;
+}
+
+app-root {
+  @include full-size();
+  display: block;
+}
+
+.modal-dialog {
+	max-width: none;
+}
+
+a {
+	&:hover {
+		color: $primaryColor;
+	}
+}
+
+.app-init-msg {
+  @include full-size();
+  @include flex-box(column, center, center);
+  font-size: 150%;
+}
+
+.app-box-disabled {
+  pointer-events: none;
+  filter: grayscale(70%);
+}
+
+.dx-theme-generic-typography {
+	font-family: $fontFamily;
+}
+
+.overlay-bg-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+@media (min-width: $screenSmall) {
+}
+
+@media (min-width: $screenMedium) {
+  .app-init-msg {
+    font-size: 200%;
+  }
+}
+
+@media (min-width: $screenLarge) {
+}
+
+@media (min-width: $screenXLarge) {
+}

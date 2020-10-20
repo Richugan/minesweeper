@@ -1,0 +1,75 @@
+@import "src/sass/app";
+
+:host {
+  @include flex-box(column, flex-start, center);
+  padding-top: 4em;
+}
+
+
+.header-button {
+  input {
+    margin: 0 0.5em;
+  }
+
+}
+
+
+.game-status {
+  min-height: 3em;
+  margin-bottom: 1em;
+}
+
+
+
+.board {
+  @include flex-box(column, flex-start, stretch);
+  border: 1px solid #ddd;
+
+  .row {
+    @include flex-box(row, flex-start, center);
+
+    .cell {
+      .cell-button {
+        @include flex-box(row, center, center);
+        height: 2em;
+        width: 2em;
+        padding: 0;
+        min-width: 0;
+
+        background: grey;
+
+        &.blank-cell {
+          background: white;
+        }
+
+        &.CIFRA-cell {
+          background: white;
+        }
+
+        &.BOMBA-cell {
+          background: red;
+          background-image: url('../../assets/gavno.png');
+          background-size: 170%;
+          background-position: center;
+          background-repeat: no-repeat;
+		}
+		
+        &.flazhok-cell {
+        //   background: red;
+          background-image: url('../../assets/flazhok.png');
+          background-size: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+
+      &:not(:last-child) {
+        border-right: 1px solid #ddd;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}

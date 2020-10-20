@@ -1,0 +1,34 @@
+npm install --save @angular/material @angular/cdk
+npm install --save @angular/animations;
+npm i node-sass --save-dev;
+ng config schematics.@schematics/angular:component.styleext scss
+npm install --save ngx-webstorage
+npm install --save web-animations-js;
+npm install --save mobile-detect;
+npm install --save compass-mixins;
+npm install --save webstomp-client;
+npm install --save json2typescript;
+npm install --save intl;
+npm install --save typescript-memoize;
+npm install --save moment;
+npm install --save underscore;
+npm install --save @types/underscore;
+npm install --save es-cookie
+npm install --save hammerjs;
+npm install --save @types/hammerjs
+npm install --save @ng-bootstrap/ng-bootstrap;
+npm install --save moment ngx-moment
+
+#Update packaje.json
+npm i -g npm-check-updates
+npm-check-updates -u
+npm install
+
+
+Update Angular
+________________________
+npm install -g @angular/cli
+npm install @angular/cli
+ng update @angular/cli
+
+ng update @angular/core

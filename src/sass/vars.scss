@@ -1,0 +1,46 @@
+/*Small devices (landscape phones, 576px and up)*/
+$screenSmall: 576px;
+
+/*Medium devices (tablets, 768px and up)*/
+$screenMedium: 768px;
+
+/*Large devices (desktops, 992px and up)*/
+$screenLarge: 992px;
+
+/*Extra large devices (large desktops, 1200px and up)*/
+$screenXLarge: 1200px;
+
+// $primaryColor: #F49D28;
+$primaryColor: #444;
+
+$textColor : #ADADAD;
+
+$textColorSecond : #B3B3B3;
+
+$blackTextColor: #444;
+
+/*Buttons color*/
+$buttonColor: $primaryColor;
+
+/*Primary background color*/
+$bgColorMain: white;
+
+/*Secondary background color*/
+$bgColorSecond: #F3F3F3;
+
+/*Border color*/
+$borderColor: #CACACA;
+
+$borderColorSecond: #DEDEDE;
+
+$dangerColor: #FF3333;
+
+/*Punch Button*/
+$standartCircle: 17em;
+
+$eventProcessedColor: #006400;
+
+$fontFamily: Roboto,"Helvetica Neue",sans-serif;
+
+$paidBreakColor: #73b66b;
+$unpaidBreakColor: #F8931F;

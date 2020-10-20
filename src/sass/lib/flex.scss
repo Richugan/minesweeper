@@ -1,0 +1,13 @@
+@mixin flex-box($direction, $justify, $align) {
+	display: flex;    
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	align-content: $align;
+}
+
+//examples
+//@include flex-box(column, flex-start, stretch);
+//@include flex-box(column, center, center);
+//@include flex-box(row, flex-start, stretch);
+//@include flex-box(row, center, center);

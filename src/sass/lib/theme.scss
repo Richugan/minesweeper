@@ -1,0 +1,55 @@
+.mat-focused .mat-input-placeholder {
+  color: $primaryColor !important;
+}
+
+button {
+  font-size: 1em !important;
+  line-height: 2.0em !important;
+  
+  &[disabled] {
+    opacity: 0.6; 
+  }
+}
+
+.mat-toolbar {
+  min-height: 2em !important;
+  
+  .mat-toolbar-row {
+    height: 2em !important;
+  }
+}
+
+ngb-tooltip-window {
+  font-size: 85% !important;
+  
+  .tooltip-inner {
+    $bgColor: rgba(#000, 0.85);
+    background-color: $bgColor !important;
+    
+    &:before {
+      border-top-color: $bgColor !important;
+    }
+  }
+}
+
+mat-progress-bar {
+	height: 2px !important;
+  
+	.mat-progress-bar-fill:after {
+		background-color: $bgColorMain !important;
+	}
+	
+	.mat-progress-bar-buffer {
+		background-color: $primaryColor !important;
+	}
+}
+
+snack-bar-container {
+	&.http-error {
+		background-color: lighten($dangerColor, 30);
+		
+		simple-snack-bar {
+			color: darken($dangerColor, 30%);
+		}
+	}
+}

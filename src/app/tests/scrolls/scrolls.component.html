@@ -1,0 +1,49 @@
+<div class="scrolls-block">
+	<div class="type">
+		<div class="header">
+			<button mat-button (click)="showFirstBlock()">FIRST</button>
+		</div>
+		<div class="content">
+			<cdk-virtual-scroll-viewport itemSize="28" class="example-container">
+				<div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+			</cdk-virtual-scroll-viewport>
+		</div>
+	</div>
+
+	<div class="type">
+		<div class="header">
+			<button mat-button (click)="showSecondBlock()">SECOND</button>
+		</div>
+
+
+		<div class="content">
+			<ng-container #secondItemsContainer></ng-container>
+
+			<ng-template #secondItem let-item="item">
+				<div class="example-item">{{item.id}} | {{item.label}}</div>
+			</ng-template>
+		</div>
+
+	</div>
+
+	<div class="type">
+		<div class="header">
+			<button mat-button (click)="showThirdBlock()">THIRD</button>
+		</div>
+
+		<div class="content">
+			<ng-container #thirdItemsContainer></ng-container>
+
+			<ng-template #thirdItem let-item="item">
+				<div>{{item.id}} | {{item.label}}</div>
+			</ng-template>
+		</div>
+	</div>
+
+</div>
+
+<div class="timer">
+	<div>
+		{{timerString}}
+	</div>
+</div>

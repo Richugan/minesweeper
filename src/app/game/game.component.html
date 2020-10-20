@@ -1,0 +1,21 @@
+<div class="header-button">
+	<input matInput [(ngModel)]="rows" type="number" min="1" max="99" placeholder="Rows">
+	<input matInput [(ngModel)]="columns" type="number" min="1" max="99" placeholder="Columns">
+	<input matInput [(ngModel)]="mines" type="number" min="1" max="99" placeholder="Mines">
+	<button mat-button (click)="ngOnInit()">Generate!</button>
+</div>
+
+<div class="game-status">
+	<div mat-button *ngIf="showStatus">{{showStatus}}</div>
+</div>
+
+<div class="board">
+	<div class="row" *ngFor="let row of visualBoard; let rIndex = index">
+		<div class="cell" *ngFor="let cell of row; let cIndex = index" (click)="updateBoard([rIndex, cIndex])" (contextmenu)="markCell([rIndex, cIndex])">
+			<button class="cell-button" mat-button [disableRipple]="showStatus"
+				[ngClass]="{'blank-cell': cell === 'B', 'CIFRA-cell': cell > 0, 'BOMBA-cell': cell === 'X', 'flazhok-cell': cell === 'F'}">
+				<span *ngIf="cell > 0">{{cell}}</span>
+			</button>
+		</div>
+	</div>
+</div>
