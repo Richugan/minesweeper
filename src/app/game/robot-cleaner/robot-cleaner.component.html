@@ -1,0 +1,58 @@
+<div class="header-button">
+	<input matInput [(ngModel)]="size" type="number" min="1" max="99" placeholder="Size"
+		(input)="cleaningField.fillMatrix()">
+	<button mat-button (click)="startClean()">Start Clean!</button>
+	<button mat-button (click)="restart()">Restart</button>
+</div>
+<table class="board">
+	<tr class="row" *ngFor="let row of cleaningField.getMatrix(); let rIndex = index">
+		<td class="cell" *ngFor="let cell of row; let cIndex = index" [ngClass]="{
+			'wall': cell === -1, 
+			'cell-none': cell === 0,
+			'visited': cell > 0, 
+			'rc': cell === -5, 
+			'rc-up': robotCleaner.getDirection() === 0, 
+			'rc-right': robotCleaner.getDirection() === 1, 
+			'rc-down': robotCleaner.getDirection() === 2, 
+			'rc-left': robotCleaner.getDirection() === 3}" (contextmenu)="rcChangePosition(rIndex, cIndex)"
+			(click)="buildWall(rIndex, cIndex)">
+			{{cell}}
+		</td>
+	</tr>
+</table>
+
+<div class="joy-stick">
+	<div class="joy-row">
+		<div class="joy-cell cell-blank">
+
+		</div>
+		<div class="joy-cell work-cell" matRipple (click)="robotCleaner.forward()">
+			GO
+		</div>
+		<div class="joy-cell cell-blank">
+
+		</div>
+	</div>
+	<div class="joy-row">
+		<div class="joy-cell work-cell" matRipple (click)="robotCleaner.turnLeft()">
+			LEFT
+		</div>
+		<div class="joy-cell cell-blank">
+
+		</div>
+		<div class="joy-cell work-cell" matRipple (click)="robotCleaner.turnRight()">
+			RIGHT
+		</div>
+	</div>
+	<div class="joy-row">
+		<div class="joy-cell cell-blank">
+
+		</div>
+		<div class="joy-cell cell-blank">
+
+		</div>
+		<div class="joy-cell cell-blank">
+
+		</div>
+	</div>
+</div>

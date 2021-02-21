@@ -1,0 +1,19 @@
+<div class="header-button">
+	<input matInput [(ngModel)]="size" type="number" min="1" max="99" placeholder="Columns">
+	<button mat-button (click)="ngOnInit()">Generate!</button>
+	<!-- <button mat-button (click)="showHerackle()">Show Herackle!</button> -->
+	<button mat-button (click)="tyanemNitku()">Show Short Path!</button>
+</div>
+
+<div class="game-status">
+	<div mat-button *ngIf="gameStatus">{{gameStatus}}</div>
+</div>
+
+<table class="board">
+	<tr class="row" *ngFor="let row of maze; let rIndex = index">
+		<td class="cell" *ngFor="let cell of row; let cIndex = index"
+			[ngClass]="{'all-border': cell === 1, 'cell-none': cell === 0, 'cell-prohod': cell === 2, 'cell-otvet': cell === 3}">
+			<!-- {{movesMaze[rIndex][cIndex]}} -->
+		</td>
+	</tr>
+</table>

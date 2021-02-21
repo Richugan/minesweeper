@@ -1,0 +1,145 @@
+@import "src/sass/app";
+
+:host {
+  @include flex-box(column, flex-start, center);
+  padding-top: 4em;
+
+  position: relative;
+}
+
+
+.header-button {
+  margin-bottom: 0.5em;
+
+  input {
+    margin: 0 0.5em;
+  }
+
+}
+
+.game-status {
+  min-height: 3em;
+  margin-bottom: 1em;
+}
+
+
+
+.board {
+  @include flex-box(column, flex-start, stretch);
+  border: 5px solid #444;
+
+  .row {
+    @include flex-box(row, flex-start, center);
+
+    .cell {
+      @include flex-box(row, center, center);
+      height: 2em;
+      width: 2em;
+      min-width: 0;
+      border: 1px solid;
+      cursor: pointer;
+      //   border: 1px solid black;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.cell-none {
+  background: white;
+}
+
+.wall {
+  background: #444;
+}
+
+.primary {
+  background: #B7D8C8;
+}
+
+.visited {
+  background: #e2e2e2;
+}
+
+.rc {
+  background-image: url('../../../assets/robot-cleaner.png');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.rc-right {
+    transform: rotate(90deg);
+  }
+
+  &.rc-down {
+    transform: rotate(180deg);
+  }
+
+  &.rc-left {
+    transform: rotate(-90deg);
+  }
+}
+
+.right-border {
+  border-right: 1px solid black;
+  //   border-right: 0 !important;
+}
+
+.bottom-border {
+  border-bottom: 1px solid black;
+  //   border-bottom: 0 !important;
+}
+
+.left-border {
+  border-left: 1px solid black;
+  //   border-left: 0 !important;
+}
+
+.up-border {
+  border-top: 1px solid black;
+  //   border-top: 0 !important;
+}
+
+.all-border {
+  background: black;
+}
+
+.joy-stick {
+  @include flex-box(column, flex-start, center);
+  position: absolute;
+  right: 6em;
+  top: 25em;
+  border-radius: 5em;
+  border: 1px solid #8c8c8c;
+  background: #eee;
+
+  .joy-row {
+    @include flex-box(row, flex-start, center);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #777;
+    }
+
+    .joy-cell {
+      @include flex-box(row, center, center);
+      width: 4em;
+      height: 4em;
+
+      //   border: 1px solid #777;
+
+
+      &:not(:last-child) {
+        border-right: 1px solid #777;
+      }
+
+      &.work-cell {
+        &:hover {
+          cursor: pointer;
+          background: #dcdcdc;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<div class="header-button">
+	<input matInput [(ngModel)]="size" type="number" min="1" max="99" placeholder="Size" (input)="fillMatrix()">
+	<!-- <button mat-button (click)="ngOnInit()">Generate!</button> -->
+	<!-- <button mat-button (click)="showHerackle()">Show Herackle!</button> -->
+	<button mat-button (click)="startGame()">Build Bridge!</button>
+	<button mat-button (click)="ngOnInit()">Restart</button>
+</div>
+
+<div class="game-status">
+	<div mat-button *ngIf="gameStatus">{{counter}}</div>
+</div>
+
+<table class="board">
+	<tr class="row" *ngFor="let row of matrix; let rIndex = index">
+		<td class="cell" *ngFor="let cell of row; let cIndex = index"
+			[ngClass]="{'zemlya': cell === 1, 'cell-none': cell === 0, 'primary': cell === 2, 'bridge': cell >= 4, 'rif': cell === 3}"
+			(click)="toggleEarth(rIndex, cIndex)" (contextmenu)="toggleRif(rIndex, cIndex)" (mousedown)="mousedown($event, rIndex, cIndex)"
+			(mouseup)="mouseup()" (mouseenter)="mouseenter(rIndex, cIndex)">
+		</td>	
+	</tr>
+</table>

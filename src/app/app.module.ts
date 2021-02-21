@@ -11,12 +11,18 @@ import { ScrollsComponent } from './tests/scrolls/scrolls.component';
 import { GameComponent } from './game/game.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MazeComponent } from './game/maze/maze.component';
+import { BridgeBuilderComponent } from './game/bridge-builder/bridge-builder.component';
+import { RobotCleanerComponent } from './game/robot-cleaner/robot-cleaner.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		ScrollsComponent,
-		GameComponent
+		GameComponent,
+		MazeComponent,
+		BridgeBuilderComponent,
+		RobotCleanerComponent
 	],
 	imports: [
 		AppRoutingModule,

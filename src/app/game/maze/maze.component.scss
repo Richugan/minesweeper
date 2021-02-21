@@ -1,0 +1,76 @@
+@import "src/sass/app";
+
+:host {
+  @include flex-box(column, flex-start, center);
+  padding-top: 4em;
+}
+
+
+.header-button {
+  margin-bottom: 0.5em;
+
+  input {
+    margin: 0 0.5em;
+  }
+
+}
+
+.game-status {
+  min-height: 3em;
+  margin-bottom: 1em;
+}
+
+
+
+.board {
+  @include flex-box(column, flex-start, stretch);
+  border: 5px solid #444;
+
+  .row {
+    @include flex-box(row, flex-start, center);
+
+    .cell {
+      @include flex-box(row, center, center);
+      height: 2em;
+      width: 2em;
+      min-width: 0;
+      //   border: 1px solid black;
+    }
+  }
+}
+
+.cell-none {
+  background: white;
+}
+
+.cell-prohod {
+  background: #B7D8C8;
+}
+
+.cell-otvet {
+  background: #f3bbae;
+}
+
+.right-border {
+  border-right: 1px solid black;
+  //   border-right: 0 !important;
+}
+
+.bottom-border {
+  border-bottom: 1px solid black;
+  //   border-bottom: 0 !important;
+}
+
+.left-border {
+  border-left: 1px solid black;
+  //   border-left: 0 !important;
+}
+
+.up-border {
+  border-top: 1px solid black;
+  //   border-top: 0 !important;
+}
+
+.all-border {
+  background: black;
+}
