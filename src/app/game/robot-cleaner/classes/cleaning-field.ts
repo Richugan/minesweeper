@@ -1,10 +1,12 @@
 import { FireEvent } from './fire-event';
+import { EventEmitter } from '@angular/core';
 
 export class CleaningField {
 	private matrix: number[][];
 
+	fireEvent = new EventEmitter<any>()
+
 	constructor(
-		protected fireEvent: FireEvent
 	) {
 
 
@@ -30,7 +32,7 @@ export class CleaningField {
 
 	public updateCell(row: number, cell: number, num: number) {
 		this.matrix[row][cell] = num;
-		this.fireEvent.fireEvent.next();
+		this.fireEvent.emit()
 	}
 
 	public buildWall(row: number, col: number) {

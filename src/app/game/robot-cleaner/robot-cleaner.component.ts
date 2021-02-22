@@ -46,20 +46,19 @@ export class RobotCleanerComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.restart();
+
+		this.cleaningField.fireEvent.subscribe(emit => {
+			this.appRef.tick();
+		})
 	}
 
 	restart() {
-		this.fireEvent = new FireEvent();
-		this.cleaningField = new CleaningField(this.fireEvent);
+		this.cleaningField = new CleaningField();
 		this.cleaningField.fillMatrix(this.size);
 		this.timerrr.unsubscribe();
 		this.robotCleaner = new RobotCleaner(this.cleaningField);
 		this.robotController = new RobotController(this.robotCleaner);
 		this.robotController.clearField();
-
-		this.fireEvent.fireEvent.subscribe(fire => {
-			this.appRef.tick();
-		})
 
 		this.oldRcPos = [0, 0];
 	}
