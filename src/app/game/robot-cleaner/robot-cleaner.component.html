@@ -16,7 +16,7 @@
 			'rc-down': robotCleaner.getDirection() === 2, 
 			'rc-left': robotCleaner.getDirection() === 3}" (contextmenu)="rcChangePosition(rIndex, cIndex)"
 			(click)="buildWall(rIndex, cIndex)">
-			{{cell}}
+			<span *ngIf="cell !== -5">{{cell}}</span>
 		</td>
 	</tr>
 </table>
